@@ -1,6 +1,7 @@
 import emptyTaskImg from "../assets/no-projects.png";
+import Buttons from "./Buttons.jsx";
 
-export default function CreateTask() {
+export default function CreateTask({onAddNewTask}) {
   return (
     <div className="mt-24 text-center w-2/3">
       <img
@@ -13,7 +14,7 @@ export default function CreateTask() {
         Select a new task or get started with a new one
       </p>
       <div className="mt-8">
-        <button>asd</button>
+        <Buttons onClick={onAddNewTask}>Create a new task</Buttons>
       </div>
     </div>
   );
