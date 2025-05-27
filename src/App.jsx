@@ -3,6 +3,7 @@ import { useState } from "react";
 import CreateTask from "./components/CreateTask.jsx";
 import NewTask from "./components/NewTask.jsx";
 import SideBar from "./components/SideBar.jsx";
+import SelectedTask from "./components/SelectedTask.jsx";
 
 function App() {
   const [tasksState, setTasksState] = useState({
@@ -37,6 +38,16 @@ function App() {
     });
   }
 
+  function handleDeleteTask() {
+    setTasksState((prevState) => {
+      return {
+        ...prevState,
+        selectedTaskId: undefined,
+        task: prevState.task.filter((task) => task.id !== prevState.selectedTaskId)
+      };
+    });
+  }
+
   function handleAddTasks(tasksData) {
     setTasksState((prevState) => {
       const taskId = Math.random();
@@ -53,7 +64,9 @@ function App() {
     });
   }
 
-  let content;
+  const selectedTask = tasksState.task.find(task => task.id === tasksState.selectedTaskId)
+
+  let content = <SelectedTask task={selectedTask} onDelete={handleDeleteTask} />;
 
   if (tasksState.selectedTaskId === null) {
     content = <NewTask onSaveTaskData={handleAddTasks} onCancel={handleCancelTask} />;

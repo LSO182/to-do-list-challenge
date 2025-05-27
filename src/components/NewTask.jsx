@@ -17,7 +17,7 @@ export default function NewTask({ onSaveTaskData, onCancel }) {
     if (
       titleVal.trim() === "" ||
       descriptionVal.trim() === "" ||
-      dueDate.trim() === ""
+      dueDateVal.trim() === ""
     ) {
       modal.current.open();
       return;
