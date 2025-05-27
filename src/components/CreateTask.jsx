@@ -3,7 +3,7 @@ import Buttons from "./Buttons.jsx";
 
 export default function CreateTask({onAddNewTask}) {
   return (
-    <div className="mt-24 text-center w-2/3">
+    <div className="mt-24 text-center lg:w-2/3">
       <img
         className="w-16 h-16 object-contain mx-auto"
         src={emptyTaskImg}

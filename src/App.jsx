@@ -75,7 +75,7 @@ function App() {
   }
 
   return (
-    <main className="h-screen my-8 flex gap-8">
+    <main className="h-screen mb-8 flex-column gap-8 lg:flex">
       <SideBar onAddNewTask={handleStartTask} onSelectedTask={handleSelectedTask} tasks={tasksState.task} />
       {content}
     </main>

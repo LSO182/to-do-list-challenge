@@ -32,7 +32,7 @@ export default function NewTask({ onSaveTaskData, onCancel }) {
 
   return (
     <>
-      <div className="w-[35rem] mt-16">
+      <div className="mt-16 px-5 lg:w-[35rem] lg:px-0">
         <menu className="flex items-center justify-end gap-4 my-4">
           <li>
             <button className="text-stone-800 hover:text-stone-950" onClick={onCancel}>
